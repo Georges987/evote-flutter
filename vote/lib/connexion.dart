@@ -19,18 +19,21 @@ class _ConnexionPageState extends State<ConnexionPage> {
   bool _isPasswordForgottenClicked = false;
 
   Future<void> _login(UserProvider userProvider) async {
+    Map<String, dynamic> userData = {
+      'email': _emailController.text,
+      'password': _passwordController.text,
+    };
+
+    String jsonData = jsonEncode(userData);
+
     try {
       final response = await http.post(
-        Uri.parse('http://127.0.0.1:8000/api/login'), 
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        // Remplacez VOTRE_ADRESSE_IP par l'adresse IP de votre serveur
-        body: {
-          'email': _emailController.text,
-          'password': _passwordController.text,
-        },
-      );
+          Uri.parse('http://vvvootee.000webhostapp.com/api/login'),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          // Remplacez VOTRE_ADRESSE_IP par l'adresse IP de votre serveur
+          body: jsonData);
       print('Réponse du serveur: ${response.body}');
 
       if (response.statusCode == 200) {
@@ -57,7 +60,8 @@ class _ConnexionPageState extends State<ConnexionPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Page de connexion', style: TextStyle(color: Colors.black)),
+        title: const Text('Page de connexion',
+            style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
       ),
       body: Column(
