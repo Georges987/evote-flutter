@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'resultatsvote.dart';
 import 'package:http/http.dart' as http;
 
 class RVoteCoursPage extends StatefulWidget {
@@ -29,7 +28,7 @@ class _RVoteCoursPageState extends State<RVoteCoursPage> {
         print('Failed to load votes en cours');
       }
     } catch (e) {
-      print('Error fetching votes en cours: $e');
+      debugPrint('Error fetching votes en cours: $e');
     }
   }
 

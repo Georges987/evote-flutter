@@ -22,6 +22,9 @@ class _ConnexionPageState extends State<ConnexionPage> {
     try {
       final response = await http.post(
         Uri.parse('http://127.0.0.1:8000/api/login'), 
+        headers: {
+          'Content-Type': 'application/json',
+        },
         // Remplacez VOTRE_ADRESSE_IP par l'adresse IP de votre serveur
         body: {
           'email': _emailController.text,

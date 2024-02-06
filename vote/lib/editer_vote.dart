@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -183,19 +185,18 @@ class _EditerVotePageState extends State<EditerVotePage> {
                 },
               ),
               SizedBox(height: 32.0),
-             Container(
-  width: double.infinity,
-  padding: EdgeInsets.symmetric(horizontal: 100.0),
-  child: ElevatedButton(
-    onPressed: _saveModifications,
-    style: ElevatedButton.styleFrom(
-      primary: Colors.blue,
-      onPrimary: Colors.white,
-    ),
-    child: Text('Enregistrer'),
-  ),
-),
-
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 100.0),
+                child: ElevatedButton(
+                  onPressed: _saveModifications,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue,
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text('Enregistrer'),
+                ),
+              ),
             ],
           ),
         ),

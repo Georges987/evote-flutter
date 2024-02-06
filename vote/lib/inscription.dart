@@ -35,7 +35,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
 
     // Effectuez une requête HTTP POST vers votre API Laravel
     final response = await http.post(
-      Uri.parse('http://127.0.0.1:8000/api/register'),
+      Uri.parse('http://vvvootee.000webhostapp.com/api/register'),
       headers: {
         'Content-Type': 'application/json',
       },
